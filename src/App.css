@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, "Noto Sans JP", sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #2563eb;
+  color: white;
+  padding: 28px 40px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.header p {
+  margin: 8px 0 0;
+}
+
+.main {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.actions input {
+  flex: 1;
+  min-width: 180px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+button {
+  padding: 12px 18px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.search-button {
+  background-color: #e5e7eb;
+}
+
+.add-button {
+  background-color: #2563eb;
+  color: white;
+}
+
+.main h2 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.record-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+}
+
+.record-card h3 {
+  margin: 0 0 12px;
+  color: #2563eb;
+}
+
+.record-card p {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+/* 登録フォーム */
+.record-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+  margin-bottom: 32px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgb(0 0 0 / 5%);
+}
+
+.record-form h2 {
+  margin: 0 0 8px;
+}
+
+.record-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.record-form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.record-form .add-button {
+  display: block;
+  align-self: center;
+  min-width: 120px;
+  margin: 8px auto 0;
+}
+
+/* 種目ごとの入力欄 */
+.exercise-form {
+  padding: 20px;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.exercise-form h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* トレーニング追加ボタン */
+.add-exercise-button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 20px 0;
+  border: 1px dashed #2563eb;
+  border-radius: 8px;
+  background: #fff;
+  color: #2563eb;
+  cursor: pointer;
+}
+
+/* 種目削除ボタン */
+.remove-button {
+  display: block;
+  margin: 15px auto 0;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #fee2e2;
+  color: #b91c1c;
+  cursor: pointer;
+}
+
+/* 登録ボタンを中央に配置 */
+.record-form > button[type="submit"] {
+  display: block;
+  margin: 20px auto 0;
+}
+
+/* 詳細画面のレイアウト */
+.app > div:has(> h2) {
+  padding: 20px;
+}
+
+/* 詳細画面の日付タイトル */
+.app > div > h2 {
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* 一覧に戻るボタン */
+.app > div > button {
+  margin-bottom: 16px;
+  padding: 8px 16px;
+}
+
+/* 詳細画面のトレーニングカード */
+.app > div > .record-card {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+/* 種目名 */
+.app > div > .record-card h3 {
+  margin-top: 0;
+  margin-bottom: 12px;
+  line-height: 1.8;
+}
+
+/* 重量・回数・セット数など */
+.app > div > .record-card p {
+  margin: 8px 0;
+  line-height: 1.8;
+}
+
+/* 編集フォーム全体 */
+.edit-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px auto;
+  padding: 20px;
+  max-width: 500px;
+  background-color: #f8f9fc;
+  border: 1px solid #e0e4ed;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* ラベルと入力欄 */
+.edit-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #444;
+  font-weight: 600;
+}
+
+/* 入力欄 */
+.edit-form input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccd2df;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 14px;
+}
+
+/* 入力欄を選択したとき */
+.edit-form input:focus {
+  outline: none;
+  border-color: #3264e8;
+  box-shadow: 0 0 0 2px rgba(50, 100, 232, 0.12);
+}
+
+/* 保存・キャンセルボタン */
+.edit-buttons {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.edit-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+/* 画面が狭いときは1列にする */
+@media (max-width: 500px) {
+  .edit-form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 詳細画面の編集・削除ボタンの間隔 */
+.record-card > button {
+  margin: 0 5px;
+}
+
+/* 詳細画面の操作ボタン */
+.detail-actions {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0 26px;
+  min-height: 40px;
+}
+
+/* トレーニング追加ボタンを中央に配置 */
+.detail-add-button {
+  margin: 0;
+}
+
+/* 一覧に戻るボタンを右端に配置 */
+.detail-back-button {
+  position: absolute;
+  right: 0;
+  margin: 0;
+}
+
+/* 詳細画面の追加フォーム */
+.detail-add-form {
+  max-width: 500px;
+  margin: 24px auto;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  background-color: #f8f9fc;
+  border: 1px solid #e0e4ed;
+  border-radius: 12px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.detail-add-form h3 {
+  grid-column: 1 / -1;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.detail-add-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.detail-add-form input {
+  width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  padding: 10px 12px;
+  border: 1px solid #ccd2df;
+  border-radius: 6px;
+  background-color: white;
+  font-size: 14px;
+}
+
+.detail-add-form > button {
+  grid-column: 1 / -1;
+  justify-self: center;
+  min-width: 120px;
+  margin-top: 8px;
+}
+
+@media (max-width: 500px) {
+  .detail-add-form {
+    grid-template-columns: 1fr;
+    padding: 16px;
+  }
+}
+
+/* アプリ全体の横幅を調整 */
+.app {
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* パソコン画面に合わせて表示 */
+@media (min-width: 768px) {
+  .app {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+/* 詳細画面を横並びにする */
+.detail-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.8fr);
+  gap: 24px;
+  align-items: start;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+/* トレーニング記録カード */
+.detail-content > .record-card {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 追加フォームを右側に配置 */
+.detail-content > .detail-add-form {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* 画面が狭い場合は縦並びに戻す */
+@media (max-width: 768px) {
+  .detail-content {
+    grid-template-columns: 1fr;
+  }
+}
