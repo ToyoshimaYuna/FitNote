@@ -109,18 +109,35 @@ flowchart TD
 
 ## 起動方法
 
-### フロントエンド
+### 前提条件
+- Node.js がインストールされていること
+- Java がインストールされていること
 
-フロントエンドのプロジェクトフォルダで、以下のコマンドを実行します。
+### 1. リポジトリをクローンする
+
+```bash
+git clone https://github.com/ToyoshimaYuna/FitNote.git
+cd FitNote
+```
+
+### 2. バックエンドを起動する
+
+`backend` フォルダに移動し、以下のコマンドを実行します。
+
+```powershell
+cd backend
+.\mvnw.cmd spring-boot:run
+```
+
+バックエンドは `http://localhost:8080` で起動します。
+
+### 3. フロントエンドを起動する
+
+別のターミナルを開き、リポジトリのルートフォルダに移動して、以下のコマンドを実行します。
 
 ```bash
 npm install
 npm run dev
 ```
 
-### バックエンド
-
-バックエンドのプロジェクトフォルダで、以下のコマンドを実行します。
-
-```powershell
-.\mvnw.cmd spring-boot:run
+フロントエンドは、ターミナルに表示されるURL（通常は `http://localhost:5173`）にアクセスして利用します。
