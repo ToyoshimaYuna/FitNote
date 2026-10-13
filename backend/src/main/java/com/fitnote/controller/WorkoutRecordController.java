@@ -8,7 +8,10 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/workout-records")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://fit-note-pied.vercel.app"
+})
 public class WorkoutRecordController {
 
     private final WorkoutRecordRepository repository;
