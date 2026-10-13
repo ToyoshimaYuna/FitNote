@@ -1,8 +1,8 @@
 # Fitノート
 
-## GitHubリポジトリ
+## 🌐 公開URL
 
-[Fitノートのソースコードはこちら](https://github.com/ToyoshimaYuna/FitNote)
+https://fit-note-pied.vercel.app
 
 ## アプリケーションの概要
 
