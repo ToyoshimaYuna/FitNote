@@ -259,6 +259,7 @@ function App() {
       // 各種目を登録
       for (const item of exercises) {
         const detailResponse = await fetch('https://fitnote.onrender.com/workout-details', {
+          method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
